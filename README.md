@@ -1,154 +1,271 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Futuro Dev</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Futuro Dev</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      line-height: 1.6;
-    }
+<style>
+:root {
+  --bg: #0b0f17;
+  --card: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #38bdf8;
+  --border: rgba(255,255,255,0.06);
+}
 
-    header {
-      background: #111827;
-      padding: 40px 20px;
-      text-align: center;
-    }
+.light {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #0284c7;
+  --border: rgba(0,0,0,0.08);
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: #38bdf8;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    header p {
-      color: #94a3b8;
-    }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
+/* TOP BAR */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+}
 
-    section {
-      margin-bottom: 40px;
-    }
+.logo {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
 
-    h2 {
-      color: #38bdf8;
-      margin-bottom: 10px;
-    }
+.actions button {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--text);
+}
 
-    .card {
-      background: #1e293b;
-      padding: 15px;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
 
-    .button {
-      display: inline-block;
-      padding: 10px 15px;
-      background: #38bdf8;
-      color: #0f172a;
-      text-decoration: none;
-      border-radius: 6px;
-      margin-top: 10px;
-      font-weight: bold;
-    }
+.hero h1 {
+  font-size: 3rem;
+  letter-spacing: -1px;
+}
 
-    .button:hover {
-      background: #0ea5e9;
-    }
+.hero p {
+  margin-top: 10px;
+  color: var(--muted);
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #111827;
-      color: #64748b;
-      margin-top: 40px;
-    }
+/* CTA */
+.cta {
+  margin-top: 20px;
+}
 
-    code {
-      background: #0b1220;
-      padding: 3px 6px;
-      border-radius: 5px;
-      color: #38bdf8;
-    }
-  </style>
+.cta a {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* SECTIONS */
+section {
+  margin: 70px 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: 0.6s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 18px;
+  border-radius: 14px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* PROJECT CARD */
+.project-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.project-desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .topbar {
+    padding: 15px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>🚀 Futuro Dev</h1>
-  <p>Um projeto de aprendizado e evolução em desenvolvimento de software</p>
-</header>
+<!-- TOP -->
+<div class="topbar">
+  <div class="logo">Futuro Dev</div>
+  <div class="actions">
+    <button onclick="toggleTheme()">theme</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>construindo consistência.</h1>
+  <p>um ambiente de evolução contínua em desenvolvimento de software</p>
+
+  <div class="cta">
+    <a href="https://github.com/fredericocordeiro1/futuro_dev" target="_blank">
+      ver repositório
+    </a>
+  </div>
+</div>
 
 <div class="container">
 
+  <!-- ABOUT -->
   <section>
-    <h2>📌 Sobre</h2>
+    <h2>sobre</h2>
     <div class="card">
-      Este projeto reúne práticas, estudos e experimentações para evolução como desenvolvedor.
-      Aqui você encontra código, testes e ideias em constante melhoria.
+      não é um projeto final. é um sistema em construção contínua de habilidades, lógica e execução.
     </div>
   </section>
 
+  <!-- STACK -->
   <section>
-    <h2>⚙️ Tecnologias</h2>
-    <div class="card">
-      <ul>
-        <li>JavaScript / Node.js</li>
-        <li>HTML & CSS</li>
-        <li>Python (quando aplicável)</li>
-        <li>Git & GitHub</li>
-      </ul>
+    <h2>stack</h2>
+    <div class="grid">
+      <div class="card">JavaScript</div>
+      <div class="card">Node.js</div>
+      <div class="card">HTML / CSS</div>
+      <div class="card">Git</div>
     </div>
   </section>
 
+  <!-- PROJECTS -->
   <section>
-    <h2>🚀 Como rodar</h2>
-    <div class="card">
-      <p>Clone o projeto:</p>
-      <code>git clone https://github.com/fredericocordeiro1/futuro_dev.git</code>
+    <h2>projetos</h2>
+    <div class="grid">
 
-      <p>Entre na pasta:</p>
-      <code>cd futuro_dev</code>
+      <div class="card">
+        <div class="project-title">futuro dev core</div>
+        <div class="project-desc">estrutura base do ecossistema de estudos.</div>
+      </div>
 
-      <p>Execute o projeto conforme o stack usado.</p>
-    </div>
-  </section>
+      <div class="card">
+        <div class="project-title">experimentos ui</div>
+        <div class="project-desc">testes de interface, interação e animação.</div>
+      </div>
 
-  <section>
-    <h2>🎯 Objetivo</h2>
-    <div class="card">
-      Evoluir habilidades em programação, criar projetos reais e construir um portfólio sólido.
-    </div>
-  </section>
+      <div class="card">
+        <div class="project-title">builds rápidos</div>
+        <div class="project-desc">protótipos e ideias em validação.</div>
+      </div>
 
-  <section>
-    <h2>⭐ Ação</h2>
-    <div class="card">
-      Se curtir o projeto, deixe uma estrela no repositório!
-      <br/>
-      <a class="button" href="https://github.com/fredericocordeiro1/futuro_dev" target="_blank">
-        Ver no GitHub
-      </a>
     </div>
   </section>
 
 </div>
 
 <footer>
-  Feito por Frederico Cordeiro • Futuro Dev 🚀
+  feito por Frederico Cordeiro • futuro dev
 </footer>
+
+<script>
+
+// THEME
+function toggleTheme() {
+  document.body.classList.toggle("light");
+}
+
+// SIMPLE REVEAL (safe version)
+const sections = document.querySelectorAll("section");
+
+function reveal() {
+  const trigger = window.innerHeight * 0.85;
+
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < trigger) {
+      sec.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
+
+</script>
 
 </body>
 </html>
