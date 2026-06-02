@@ -177,6 +177,7 @@ audio.volume = 0.12;
 audioBtn.addEventListener('click', async () => {
   try {
     if (audio.paused) {
+      audio.volume = 0.12;
       await audio.play();
       audioBtn.querySelector('i').className = 'fa-solid fa-volume-high';
     } else {
