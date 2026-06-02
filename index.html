@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Futuro Dev - A Jornada do Programador. Página motivacional cyberpunk para desenvolvedores." />
+  <title>Futuro Dev — A Jornada do Programador</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-theme">
+
+  <!-- LOADER -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-ring"></div>
+    <p class="loader-text">Inicializando Sistema<span class="dots">...</span></p>
+  </div>
+
+  <!-- PARTÍCULAS DE FUNDO -->
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- ÁUDIO AMBIENTE -->
+  <audio id="ambient-audio" loop preload="metadata">
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg" />  </audio>
+
+  <!-- CONTROLES FLUTUANTES -->
+  <div class="floating-controls" role="toolbar" aria-label="Controles">
+    <button id="theme-toggle" class="ctrl-btn" title="Trocar tema" aria-label="Trocar tema">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+    <button id="audio-toggle" class="ctrl-btn" title="Música ambiente" aria-label="Música ambiente">
+      <i class="fa-solid fa-volume-xmark"></i>
+    </button>
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-title neon-text">Futuro Dev</h1>
+          <p class="brand-subtitle">A Jornada do Programador</p>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#hero">Início</a>
+        <a href="#frases">Frases</a>
+        <a href="#evolucao">Evolução</a>
+        <a href="#citacao">Inspiração</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner reveal">
+        <span class="badge"><i class="fa-solid fa-bolt"></i> Bem-vindo ao Futuro</span>
+        <h2 class="hero-title">
+          Construa o <span class="grad-text">amanhã</span> com cada <span class="neon-cyan">linha de código</span>.
+        </h2>
+        <p class="hero-desc">
+          A evolução do desenvolvedor começa onde a zona de conforto termina.
+          Persista, estude, crie. O futuro pertence a quem o programa.
+        </p>
+        <button id="motivate-btn" class="btn-primary">
+          <i class="fa-solid fa-rocket"></i> Quero me motivar
+        </button>
+
+        <!-- ESTATÍSTICAS -->
+        <div class="stats">
+          <div class="stat-card glass">
+            <span class="stat-num" data-count="1024">0</span>
+            <span class="stat-label">Linhas escritas hoje</span>
+          </div>
+          <div class="stat-card glass">
+            <span class="stat-num" data-count="87">0</span>
+            <span class="stat-label">Desafios vencidos</span>
+          </div>
+          <div class="stat-card glass">
+            <span class="stat-num" data-count="365">0</span>
+            <span class="stat-label">Dias evoluindo</span>
+          </div>
+          <div class="stat-card glass">
+            <span class="stat-num" id="visit-counter">0</span>
+            <span class="stat-label">Suas visitas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA E HORA -->
+    <section class="section datetime-section">
+      <div class="container two-cols">
+        <article class="card glass neon-border reveal">
+          <i class="fa-solid fa-calendar-days card-icon"></i>
+          <h3>Data Atual</h3>
+          <p id="current-date" class="big-text">--</p>
+          <span class="card-foot" id="weekday">--</span>
+        </article>
+        <article class="card glass neon-border reveal">
+          <i class="fa-solid fa-clock card-icon"></i>
+          <h3>Hora em Tempo Real</h3>
+          <p id="current-time" class="big-text mono">--:--:--</p>
+          <span class="card-foot">Fuso local</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- FRASES MOTIVACIONAIS -->
+    <section id="frases" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="grad-text">Frases</span> Motivacionais</h2>
+        <div class="quote-card glass reveal">
+          <i class="fa-solid fa-quote-left quote-mark"></i>
+          <p id="motivational-phrase" class="quote-text">Carregando frase...</p>
+          <button id="new-phrase-btn" class="btn-secondary">
+            <i class="fa-solid fa-shuffle"></i> Nova frase
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- META DO DIA -->
+    <section class="section">
+      <div class="container">
+        <div class="goal-card glass neon-border reveal">
+          <div class="goal-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <div>
+            <span class="card-foot">Meta do dia</span>
+            <h3 id="daily-goal" class="goal-text">Carregando meta...</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVOLUÇÃO DO DEV -->
+    <section id="evolucao" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="grad-text">Evolução</span> do Desenvolvedor</h2>
+        <div class="skills reveal">
+          <div class="skill">
+            <div class="skill-head"><span><i class="fa-brands fa-html5"></i> HTML</span><span>90%</span></div>
+            <div class="bar"><div class="bar-fill" data-progress="90"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-head"><span><i class="fa-brands fa-css3-alt"></i> CSS</span><span>85%</span></div>
+            <div class="bar"><div class="bar-fill" data-progress="85"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-head"><span><i class="fa-brands fa-js"></i> JavaScript</span><span>80%</span></div>
+            <div class="bar"><div class="bar-fill" data-progress="80"></div></div>
+          </div>
+          <div class="skill">
+            <div class="skill-head"><span><i class="fa-solid fa-brain"></i> Lógica de Programação</span><span>95%</span></div>
+            <div class="bar"><div class="bar-fill" data-progress="95"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CITAÇÃO -->
+    <section id="citacao" class="section">
+      <div class="container">
+        <h2 class="section-title"><span class="grad-text">Citação</span> Inspiradora</h2>
+        <blockquote id="famous-quote" class="famous-quote glass reveal">
+          <p class="quote-text">"A melhor maneira de prever o futuro é inventá-lo."</p>
+          <footer>— <cite>Alan Kay</cite></footer>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h3 class="neon-text">Futuro Dev</h3>
+        <p>Curso de Sistemas de Informação</p>
+      </div>
+      <div>
+       <h4>Desenvolvedor</h4>
+<ul class="members">
+  <li>Frederico Cordeiro</li>
+</ul>
+      </div>
+      <div>
+        <h4>Sobre</h4>
+        <p>Projeto motivacional desenvolvido em HTML, CSS e JavaScript puro.</p>
+        <p>&copy; <span id="current-year">2025</span> — Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- VOLTAR AO TOPO -->
+  <button id="back-to-top" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
