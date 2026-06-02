@@ -13,7 +13,27 @@ const motivationalPhrases = [
   "Disciplina vence talento quando o talento não estuda.",
   "Você está a uma linha de código de mudar tudo.",
   "Aprender é o melhor framework da vida.",
-  "Seja o desenvolvedor que o seu eu do passado precisava."
+  "Seja o desenvolvedor que o seu eu do passado precisava.",
+  "O conhecimento acumulado hoje será seu diferencial amanhã.",
+  "Grandes sistemas começam com pequenas linhas de código.",
+  "Persistência é a linguagem universal do sucesso.",
+  "Cada projeto concluído fortalece sua experiência.",
+  "Quem aprende continuamente nunca fica para trás.",
+  "A prática transforma teoria em oportunidade.",
+  "Seu próximo desafio pode revelar seu maior potencial.",
+  "A tecnologia muda rápido, mas a vontade de aprender muda destinos.",
+  "Todo especialista já foi iniciante um dia.",
+  "Resolver problemas é a verdadeira essência da programação.",
+  "Seu esforço silencioso está construindo resultados visíveis.",
+  "Não espere pela oportunidade, desenvolva as habilidades para criá-la.",
+  "Consistência é mais poderosa do que motivação passageira.",
+  "Cada erro compreendido se transforma em conhecimento.",
+  "Programar é construir soluções para o mundo real.",
+  "O futuro é escrito por quem decide aprender hoje.",
+  "Grandes conquistas nascem da soma de pequenas evoluções diárias.",
+  "Quanto mais você pratica, mais distante fica da desistência.",
+  "Transforme curiosidade em aprendizado e aprendizado em realização.",
+  "Seu crescimento profissional começa com a próxima tentativa."
 ];
 
 const dailyGoals = [
@@ -24,7 +44,19 @@ const dailyGoals = [
   "Ler a documentação de uma tecnologia nova.",
   "Construir um mini projeto do zero.",
   "Compartilhar conhecimento com alguém.",
-  "Praticar CSS criando um layout novo."
+  "Praticar CSS criando um layout novo.",
+  "Assistir uma aula sobre desenvolvimento web.",
+  "Criar uma função reutilizável para um projeto.",
+  "Revisar conceitos de HTML semântico.",
+  "Estudar estruturas de dados por 30 minutos.",
+  "Contribuir com uma melhoria em um projeto pessoal.",
+  "Organizar seus arquivos e projetos de programação.",
+  "Praticar responsividade em uma página existente.",
+  "Pesquisar tendências atuais da área de tecnologia.",
+  "Resolver um problema utilizando uma nova abordagem.",
+  "Ler um artigo técnico sobre programação.",
+  "Treinar manipulação do DOM com JavaScript.",
+  "Planejar o próximo projeto que deseja desenvolver."
 ];
 
 const famousQuotes = [
@@ -34,7 +66,20 @@ const famousQuotes = [
   { text: "A simplicidade é o último grau de sofisticação.", author: "Leonardo da Vinci" },
   { text: "Programar é a arte de dizer a um computador o que fazer.", author: "Donald Knuth" },
   { text: "Talk is cheap. Show me the code.", author: "Linus Torvalds" },
-  { text: "A inovação distingue um líder de um seguidor.", author: "Steve Jobs" }
+  { text: "A inovação distingue um líder de um seguidor.", author: "Steve Jobs" },
+  { text: "O sucesso é a soma de pequenos esforços repetidos diariamente.", author: "Robert Collier" },
+  { text: "A educação é a arma mais poderosa que você pode usar para mudar o mundo.", author: "Nelson Mandela" },
+  { text: "Nunca é tarde para ser aquilo que você poderia ter sido.", author: "George Eliot" },
+  { text: "Não encontre defeitos, encontre soluções.", author: "Henry Ford" },
+  { text: "O conhecimento fala, mas a sabedoria escuta.", author: "Jimi Hendrix" },
+  { text: "O único modo de fazer um excelente trabalho é amar o que você faz.", author: "Steve Jobs" },
+  { text: "A persistência realiza o impossível.", author: "Provérbio Chinês" },
+  { text: "O aprendizado nunca esgota a mente.", author: "Leonardo da Vinci" },
+  { text: "A jornada de mil quilômetros começa com um único passo.", author: "Lao Tsé" },
+  { text: "A sorte favorece a mente preparada.", author: "Louis Pasteur" },
+  { text: "A mente que se abre a uma nova ideia jamais volta ao seu tamanho original.", author: "Albert Einstein" },
+  { text: "Grandes realizações exigem grandes ambições.", author: "Heráclito" },
+  { text: "O futuro depende do que você faz hoje.", author: "Mahatma Gandhi" }
 ];
 
 /* ---------- Loader inicial ---------- */
