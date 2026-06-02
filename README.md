@@ -1,130 +1,104 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Futuro Dev</title>
+# 🚀 Futuro Dev
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: #e5e7eb;
-}
+> Sistema pessoal de evolução em desenvolvimento de software.
 
-/* LIGHT MODE */
-.light {
-  background: #f8fafc;
-  color: #0f172a;
-}
+---
 
-header {
-  text-align: center;
-  padding: 40px 20px;
-  background: #111827;
-}
+## 📌 Overview
 
-.light header {
-  background: #e2e8f0;
-}
+O Futuro Dev é um repositório de construção contínua.
 
-h1 {
-  margin: 0;
-  font-size: 2.2rem;
-}
+Não é um projeto finalizado — é um ambiente de prática, testes e evolução técnica.
 
-p {
-  color: #94a3b8;
-}
+A ideia aqui é simples:  
+**consistência gera competência.**
 
-/* BUTTON */
-button {
-  margin-top: 15px;
-  padding: 10px 14px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background: #38bdf8;
-  color: #0f172a;
-  font-weight: bold;
-}
+---
 
-/* CONTAINER */
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-}
+## 🧠 Mindset
 
-section {
-  margin: 30px 0;
-}
+- construir mais do que consumir
+- praticar mais do que planejar
+- evoluir através de repetição consciente
 
-.card {
-  background: #1e293b;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 10px;
-}
+---
 
-.light .card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-}
+## ⚙️ Tech Stack
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: #64748b;
-}
-</style>
-</head>
+- HTML
+- CSS
+- JavaScript
+- Git / GitHub
 
-<body>
+---
 
-<header>
-  <h1>🚀 Futuro Dev</h1>
-  <p>Projeto de aprendizado em desenvolvimento</p>
+## 📂 Estrutura
 
-  <button onclick="toggleTheme()">Alternar tema</button>
-</header>
+futuro_dev/
+│
+├── index.html      # interface principal  
+├── assets/         # recursos visuais  
+├── src/            # experimentos e códigos  
+└── README.md       # documentação  
 
-<div class="container">
+---
 
-  <section>
-    <h2>Sobre</h2>
-    <div class="card">
-      Repositório dedicado a estudos, prática de programação e evolução contínua como desenvolvedor.
-    </div>
-  </section>
+## 🚀 Como executar
 
-  <section>
-    <h2>Tecnologias</h2>
-    <div class="card">
-      HTML, CSS, JavaScript e GitHub
-    </div>
-  </section>
+Clone o repositório:
 
-  <section>
-    <h2>Objetivo</h2>
-    <div class="card">
-      Construir consistência e evolução prática no desenvolvimento de software.
-    </div>
-  </section>
+git clone https://github.com/fredericocordeiro1/futuro_dev.git
 
-</div>
+Acesse a pasta:
 
-<footer>
-  Feito por Frederico Cordeiro
-</footer>
+cd futuro_dev
 
-<script>
-function toggleTheme() {
-  document.body.classList.toggle("light");
-}
-</script>
+Abra o projeto:
 
-</body>
-</html>
+index.html
+
+Ou use Live Server no VSCode para melhor experiência.
+
+---
+
+## 🧪 O que existe aqui
+
+- experimentos de interface
+- testes de lógica e layout
+- pequenos projetos em evolução
+- ideias em validação contínua
+
+---
+
+## 📈 Status
+
+🟢 ativo  
+🔄 em evolução constante  
+🧠 em refinamento contínuo  
+
+---
+
+## 🎯 Objetivo
+
+Construir um ambiente de prática real para desenvolvimento de software, focado em consistência, aprendizado e evolução prática.
+
+---
+
+## 🌐 Link do repositório
+
+https://github.com/fredericocordeiro1/futuro_dev
+
+---
+
+## 🧭 Filosofia
+
+Não é sobre finalizar projetos.
+
+É sobre nunca parar de evoluir.
+
+---
+
+## 👤 Autor
+
+Frederico Cordeiro  
+Futuro Dev 🚀
