@@ -82,6 +82,42 @@ const famousQuotes = [
   { text: "O futuro depende do que você faz hoje.", author: "Mahatma Gandhi" }
 ];
 
+function shuffleArray(array) {
+  const shuffled = [...array];
+
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [shuffled[i], shuffled[j]] = [
+      shuffled[j],
+      shuffled[i]
+    ];
+  }
+
+  return shuffled;
+}
+
+function createRandomCycle(items) {
+  let queue = shuffleArray(items);
+
+  return function () {
+    if (queue.length === 0) {
+      queue = shuffleArray(items);
+    }
+
+    return queue.pop();
+  };
+}
+
+const getNextPhrase =
+  createRandomCycle(motivationalPhrases);
+
+const getNextGoal =
+  createRandomCycle(dailyGoals);
+
+const getNextQuote =
+  createRandomCycle(famousQuotes);
+
 /* ---------- Loader inicial ---------- */
 window.addEventListener('load', () => {
   setTimeout(() => document.getElementById('loader').classList.add('hidden'), 900);
@@ -112,7 +148,7 @@ document.getElementById('current-year').textContent = new Date().getFullYear();
 /* ---------- Frases motivacionais ---------- */
 const phraseEl = document.getElementById('motivational-phrase');
 function setRandomPhrase() {
-  const next = motivationalPhrases[Math.floor(Math.random() * motivationalPhrases.length)];
+  const next = getNextPhrase();
   phraseEl.classList.add('fade');
   setTimeout(() => {
     phraseEl.textContent = next;
@@ -130,7 +166,7 @@ setInterval(setRandomPhrase, 9000);
 
 /* ---------- Meta do dia ---------- */
 function setDailyGoal() {
-  const goal = dailyGoals[Math.floor(Math.random() * dailyGoals.length)];
+  const goal = getNextGoal();
   document.getElementById('daily-goal').textContent = goal;
 }
 setDailyGoal();
@@ -138,7 +174,7 @@ setDailyGoal();
 /* ---------- Citação inspiradora ---------- */
 const quoteEl = document.getElementById('famous-quote');
 function rotateFamousQuote() {
-  const q = famousQuotes[Math.floor(Math.random() * famousQuotes.length)];
+  const q = getNextQuote();
   quoteEl.innerHTML = `
     <p class="quote-text">"${q.text}"</p>
     <footer>— <cite>${q.author}</cite></footer>`;
